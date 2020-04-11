@@ -1,35 +1,112 @@
 @import "_normalize";
 @import "_variables";
 
-
 html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
-
 
 .ideator {
   color: $purple;
   background: $babyPink;
-  font-family: 'Open Sans', sans-serif;;
+  font-family: "Open Sans", sans-serif;
 }
 
 .editor {
-display: grid;
-grid-template-rows: 40px 1fr 80px;
+  text-align: center;
+  display: grid;
+  grid-gap: 0;
+  grid-template: 24px 1fr 96px / 1fr 2fr 1fr;
+  grid-template-areas: 
+    ". icons ."
+    ". textarea ."
+    ". buttons ." ;
+
+  &__buttons {
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: 1fr 100px 100px;
+    grid-template-areas: ". load save";
+    &--load {
+      grid-area: load;
+      border-radius: 10px;
+      border-color: $purple;
+    }
+    &--save {
+      grid-area: save;
+      border-radius: 10px;
+      border-color: $purple;
+      background-color: $purple;
+    }
+  }
+
+  &__icons {
+    grid-area: icons;
+    max-width: 24px;
+    max-height: 24px;
+    text-: ;
+    display: grid;
+    grid-template: 24px / 40px 40px 40px;
+    grid-template-areas: "bold italic list";
+    &--bold{
+      grid-area: bold;
+    }
+    &--italic{
+      grid-area: italic;
+    }
+    &--list{
+      grid-area: list;
+    }
+  }
+
 }
 
-.editor__buttons {
-display: grid;
-grid-template-columns: 1fr 100px 100px;  
+.form {
+  grid-area: textarea;
+  display: grid;
+  grid-template-rows: 1fr 10px;
+  grid-template-areas: "input label";
+  padding: 0;
+
+  &__input {
+    grid-area: input;
+    min-width: 736px;
+    min-height: 208px;
+  }
+  &__label {
+    grid-area: label;
+  }
+}
+  
+.footer {
+  position: static;
+  bottom: 16px;
+  left:16px;
+  margin-top: 166px;
 }
 
-.editor__icons {
-max-width: 24px;
-max-height: 24px;
-display: grid;
-grid-template-columns: 40px 40px 40px;
+.header {
+  text-align: center;
+
+  &__logo {
+    margin-top: 42px;
+    max-width: ;width: 80px;
+    max-height: 80px;
+  }
+
+  &__title {
+    margin: 0;  
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 64px;
+  }
+
+  &__subtitle {
+    margin: 0 0 44px 0;
+  }
 }
