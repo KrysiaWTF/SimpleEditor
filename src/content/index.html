@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Site title</title>
-    <meta name="description" content="Description" />
 
-    <!-- Title -->
-    <meta property="og:title" content="" />
-    <!-- OPTIONAL description. 2-4 sentences. -->
-    <meta property="og:description" content="" />
-    <!-- full url with http(s) ie. https://maciejkorsan.github.io/my-repo/ -->
-    <meta property="og:url" content="" />
-    <!-- full url to the image with http(s) ie. https://maciejkorsan.github.io/my-repo/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
-    <meta property="og:image" content="https://maciejkorsan.com/wtf-gulp-starter/assets/img/cover.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Ideator - Simply for ideas</title>
+  <meta name="description" content="A simple text editor to store ideas" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <link rel="manifest" href="manifest.json" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link
-      rel="apple-touch-icon"
-      sizes="192x192"
-      href="assets/pwa/icons/icon-192x192.png"
-    />
+  <link rel="icon" type="image/png" href="assets/pwa/icons/SimpleLogo.png" />
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/pwa/icons/icon-192x192.png"
-    />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
 
-    <link rel="stylesheet" href="css/main.css" />
-  </head>
-  <body>
-    <h1>Hello world - with simple PWA support!</h1>
+<body class="ideator">
+  <header class="header">
+    <img class="header__logo" src="assets\pwa\icons\SimpleLogo.png" alt="Site logo" />
+    <h1 class="header__title">
+      Ideator
+    </h1>
+    <p>
+      Your place to store ideas
+    </p>
+  </header>
+  <main class="editor">
+    <section class="editor__icons">
+      <img class="editor__icons" src="assets\pwa\icons\Bold.png" alt="Bold" />
+      <img class="editor__icons" src="assets\pwa\icons\Italic.png" alt="Italic" />
+      <img class="editor__icons" src="assets\pwa\icons\ListIcon.png" alt="Toggle list" />
+    </section>
+    <form class="form">
+        <p class="form__area">
+          <textarea class="form__input" id="textarea" name="textarea">
+            Type your ideas here
+          </textarea>
+          <label class="form__label" for="textarea" >
+            Click load to discover your previous ideas. Click save to remember the new ones.
+          </label>
+         </p>
+    </form>
+    <section class="editor__buttons">
+      <p class="editor__buttons--Load">
+        Load
+      </p>
+      <p class="editor__buttons--Save">
+        Save
+      </p>
+    </section>
 
-    <script src="js/main.js"></script>
-  </body>
+  </main>
+
+<footer class="footer">
+ <p>All rights reserved. Created 04.2020 by Krysia</p>
+</footer>
+
+  <script src="js/main.js"></script>
+</body>
+
 </html>

@@ -10,7 +10,26 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  color: $yellow;
-  background: $violet;
+
+.ideator {
+  color: $purple;
+  background: $babyPink;
+  font-family: 'Open Sans', sans-serif;;
+}
+
+.editor {
+display: grid;
+grid-template-rows: 40px 1fr 80px;
+}
+
+.editor__buttons {
+display: grid;
+grid-template-columns: 1fr 100px 100px;  
+}
+
+.editor__icons {
+max-width: 24px;
+max-height: 24px;
+display: grid;
+grid-template-columns: 40px 40px 40px;
 }
