@@ -26,28 +26,26 @@
     </p>
   </header>
   <main class="editor">
-    <section class="editor__icons">
-      <img class="editor__icons editor__icons--bold" src="assets\pwa\icons\Bold.png" alt="Bold" />
-      <img class="editor__icons editor__icons--italic" src="assets\pwa\icons\Italic.png" alt="Italic" />
-      <img class="editor__icons editor__icons--list" src="assets\pwa\icons\ListIcon.png" alt="Toggle list" />
+    <section class="icons">
+      <button class="icons icons__bold icons__bold--js" src="assets\pwa\icons\Bold.png" alt="Bold"> </button>
+      <img class="icons icons__italic icons__italic--js" src="assets\pwa\icons\Italic.png" alt="Italic" />
+      <img class="icons icons__list icons__list--js" src="assets\pwa\icons\ListIcon.png" alt="Toggle list" />
     </section>
     <form class="form">
         <p class="form__area">
-          <textarea class="form__input" id="textarea" name="textarea">
-            Type your ideas here
-          </textarea>
+          <textarea class="form__input form__input--js" id="textarea" name="textarea" placeholder="Type your ideas here"></textarea>
           <label class="form__label" for="textarea" >
             Click load to discover your previous ideas. Click save to remember the new ones.
           </label>
          </p>
     </form>
-    <section class="editor__buttons">
-      <p class="editor__button editor__button--load">
+    <section class="buttons">
+      <button class="button button__load button__load--js">
         Load
-      </p>
-      <p class="editor__button editor__button--save">
+      </button>
+      <button class="button button__save button__save--js">
         Save
-      </p>
+      </button>
     </section>
 
   </main>

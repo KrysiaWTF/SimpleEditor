@@ -17,6 +17,38 @@ if ('serviceWorker' in navigator) {
 // place your code below
 
 
-console.log(`Hello world!`);
+const iconBold = document.querySelector('.icons__bold--js');
+const iconItalic = document.querySelector('.icons__italic--js');
+const iconList = document.querySelector('.icons__list--js');
 
+var textArea = document.getElementById('textarea');
+
+const buttonLoad = document.querySelector('.button__load--js');
+const buttonSave = document.querySelector('.button__save--js');
+
+
+
+var selText = window.getSelection()
+
+
+// iconBold.addEventListener('click', () => {
+//   console.log(selText)
+//   selText.classList.add('.form__input--bold');
+// });
+
+// localStorage.setItem('SavedText', textArea)
+
+
+//Save the text from textarea
+buttonSave.addEventListener('click', () => {
+  localStorage.setItem('SavedText', textArea.value);
+});
+
+
+//Load the text from local storage
+buttonLoad.addEventListener('click', () => {
+  var loadText = localStorage.getItem('SavedText');
+  textArea.value = loadText;
+  console.log(loadText);
+});
 
