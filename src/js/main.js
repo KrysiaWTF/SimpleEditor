@@ -134,5 +134,8 @@ buttonSave.addEventListener('click', () => {
 //Load the text from local storage
 buttonLoad.addEventListener('click', () => {
   var loadText = localStorage.getItem('SavedText');
+  if (localStorage.getItem('SavedText') == null) {
+    alert('Nothing to load!')
+  } else
   textArea.value = loadText;
 });
