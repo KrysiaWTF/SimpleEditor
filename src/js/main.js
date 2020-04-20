@@ -48,33 +48,68 @@ textArea.addEventListener('select', () => {
     selTarget: event.target,
     selStart: event.target.selectionStart,
     selEnd: event.target.selectionEnd,
-    };
-  console.log (selectionObj);
+  };
 
-  var selStringify = (JSON.stringify (selectionObj));
+  var selStringify = (JSON.stringify(selectionObj));
 
   sessionStorage.setItem('selectionObj', selStringify);
 });
 
 
 // get to saved selection
-function parseSelection () {
+// function parseSelection() {
+//   if (sessionStorage.getItem('selectionObj') !== null) {
+//     const savedSel = sessionStorage.getItem('selectionObj');
+//     selection = JSON.parse(savedSel);
+//     // console.log(selection);
+//   }
+// };
+
+
+//Split the string in textarea to get the selection
+function textSlice() {
+  //parse selection from session storage
   const savedSel = sessionStorage.getItem('selectionObj');
-  console.log (savedSel)
-  if (sessionStorage.getItem('selectionObj') == true) {
-    const selection = JSON.parse(savedSel)
-    console.log(selection);
+  const mySel = JSON.parse(savedSel);
+  if (sessionStorage.getItem('selectionObj') !== null) {
+    mySel
+    console.log(mySel)
   }
-    
+  //get the start and end of selevtion
+    const selS = mySel.selStart
+    const selE = mySel.selEnd
+
+  //slice the text
+    const txt = textArea.value;
+  
+    var txtBegin =  txt.slice(0, selS);
+    var txtSel = txt.slice(selS, selE);
+    var txtEnd = txt.slice(selE);
+
+    console.log(txt.slice(0, selS))
+    console.log(selS)
+    console.log(selE)
+    console.log(txtEnd)
+
+
+  // if (txtSel.style.fontStyle == 'italic') {
+  //   txtSel.style.fontStyle == 'normal'
+  // } else
+  //   txtSel.style.fontStyle == 'italic';
+
+  let txtCon = txtBegin.concat(txtSel, txtEnd)
+  textArea.value = txtCon
+
 };
 
 
-
-iconItalic.addEventListener('click', parseSelection)
+//Make the style Italic
 iconItalic.addEventListener('click', () => {
-  //parseSelection
-  //selText.style.fontStyle = 'italic
- 
+  if (textArea.style.fontStyle == 'italic') {
+    textArea.style.fontStyle = 'normal'
+  } else
+    textArea.style.fontStyle = 'italic'
+
 });
 
 
@@ -100,6 +135,4 @@ buttonSave.addEventListener('click', () => {
 buttonLoad.addEventListener('click', () => {
   var loadText = localStorage.getItem('SavedText');
   textArea.value = loadText;
-  console.log(loadText);
 });
-
