@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Ideator - Simply for ideas</title>
+  <meta name="description" content="A simple text editor to store ideas" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="assets/pwa/icons/SimpleLogo.png" />
+
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body class="ideator">
+  <header class="header">
+    <img class="header__logo" src="assets\pwa\icons\SimpleLogo.png" alt="Site logo" />
+    <h1 class="header__title">
+      Ideator
+    </h1>
+    <p class="header__subtitle">
+      Your place to store ideas
+    </p>
+  </header>
+  <main class="editor">
+    <section class="icons">
+      <img class="icons icons__bold icons__bold--js" src="assets\pwa\icons\Bold.png" alt="Bold"/>
+      <img class="icons icons__italic icons__italic--js" src="assets\pwa\icons\Italic.png" alt="Italic" />
+      <!-- <img class="icons icons__list icons__list--js" src="assets\pwa\icons\ListIcon.png" alt="Toggle list" /> -->
+    </section>
+    <form class="form">
+        <p class="form__area">
+          <textarea class="form__input form__input--js" id="textarea" name="textarea" placeholder="Type your ideas here"></textarea>
+          <label class="form__label" for="textarea" >
+            Click load to discover your previous ideas. Click save to remember the new ones.
+          </label>
+         </p>
+    </form>
+    <section class="buttons">
+      <button class="button button__load button__load--js">
+        Load
+      </button>
+      <button class="button button__save button__save--js">
+        Save
+      </button>
+    </section>
+
+  </main>
+
+<footer class="footer">
+ <p>All rights reserved. Created 04.2020 by Krysia</p>
+</footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
