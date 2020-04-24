@@ -29,15 +29,18 @@ html {
   border-color: $purple;
   //button sizing
   height: 36px;
-  margin-right: 16px;
-  margin-left: 16px;
+  margin: 16px;
+  text-align: center;
   // font
   font-weight: 600;
   font-size: 14px;
-  line-height: 16px;
   padding: 10px 31px;
   text-align: center;
   letter-spacing: 0.5px;
+  transition: transform 0.2s ease-in;
+  &:hover {
+    transform: scale(1.1);
+  }
 
   &__load {
     grid-area: load;
@@ -49,6 +52,7 @@ html {
   &__save {
     grid-area: save;
     background-color: $purple;
+    border: 1px solid $purple;
     color: #ffffff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
@@ -63,26 +67,14 @@ html {
     ". icons ."
     ". textarea ."
     ". buttons .";
-
-
 }
 
-.icons {
-  grid-area: icons;
-  max-width: 24px;
-  max-height: 24px;
-  display: grid;
-  grid-template: 24px / 40px 40px 40px;
-  grid-template-areas: "bold italic list";
-  &__bold {
-    grid-area: bold;
-  }
-  &__italic {
-    grid-area: italic;
-  }
-  &__list {
-    grid-area: list;
-  }
+.footer {
+  position: static;
+  bottom: 16px;
+  left: 16px;
+  margin-top: 166px;
+  font-size: 10px;
 }
 
 .form {
@@ -98,7 +90,7 @@ html {
   &__input {
     min-width: 736px;
     min-height: 256px;
-    &--bold{
+    &--bold {
       font-weight: bold;
     }
   }
@@ -111,14 +103,6 @@ html {
   }
 }
 
-.footer {
-  position: static;
-  bottom: 16px;
-  left: 16px;
-  margin-top: 166px;
-  font-size: 10px;
-}
-
 .header {
   text-align: center;
 
@@ -126,6 +110,15 @@ html {
     margin-top: 42px;
     max-width: 80px;
     max-height: 80px;
+    transform: rotate(0.5turn) scale(1.7);
+    &--fill {
+      fill: $purple;
+      transition: fill 0.5s ease-in;
+      transition: transform 0.5s ease-in;
+      &:hover {
+        fill: rgb(230, 198, 18);
+      }
+    }
   }
 
   &__title {
@@ -141,5 +134,36 @@ html {
     font-size: 18px;
     line-height: 24px;
     text-align: center;
+  }
+}
+
+.icons {
+  grid-area: icons;
+  max-width: 24px;
+  max-height: 24px;
+  background-color: $babyPink;
+  border-radius: 4px;
+  display: grid;
+  grid-template: 24px / 40px 40px 40px;
+  grid-template-areas: "bold italic list";
+  transition: transform 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+  &__bold {
+    grid-area: bold;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: rgb(216, 203, 205);
+    }
+  }
+  &__italic {
+    grid-area: italic;
+    &:hover {
+      transform: scale(1.1);
+      background-color: rgb(216, 203, 205);
+    }
+  }
+  &__list {
+    grid-area: list;
   }
 }
