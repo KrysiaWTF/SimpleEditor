@@ -336,14 +336,22 @@ html {
   border-radius: 4px;
   border-color: #121232;
   height: 36px;
-  margin-right: 16px;
-  margin-left: 16px;
+  margin: 16px;
+  text-align: center;
   font-weight: 600;
   font-size: 14px;
-  line-height: 16px;
   padding: 10px 31px;
   text-align: center;
-  letter-spacing: 0.5px; }
+  letter-spacing: 0.5px;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  -o-transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in; }
+  .button:hover {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1); }
   .button__load {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
@@ -358,6 +366,7 @@ html {
     -ms-grid-column: 3;
     grid-area: save;
     background-color: #121232;
+    border: 1px solid #121232;
     color: #ffffff;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
 
@@ -370,29 +379,12 @@ html {
       grid-template: 24px 1fr 96px / 1fr 2fr 1fr;
       grid-template-areas: ". icons ." ". textarea ." ". buttons ."; }
 
-.icons {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-  grid-area: icons;
-  max-width: 24px;
-  max-height: 24px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 40px 40px 40px;
-      grid-template: 24px / 40px 40px 40px;
-      grid-template-areas: "bold italic list"; }
-  .icons__bold {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: bold; }
-  .icons__italic {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-    grid-area: italic; }
-  .icons__list {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-    grid-area: list; }
+.footer {
+  position: static;
+  bottom: 16px;
+  left: 16px;
+  margin-top: 166px;
+  font-size: 10px; }
 
 .form {
   -ms-grid-row: 3;
@@ -424,19 +416,27 @@ html {
     line-height: 16px;
     color: #000000; }
 
-.footer {
-  position: static;
-  bottom: 16px;
-  left: 16px;
-  margin-top: 166px;
-  font-size: 10px; }
-
 .header {
   text-align: center; }
   .header__logo {
     margin-top: 42px;
     max-width: 80px;
-    max-height: 80px; }
+    max-height: 80px;
+    -webkit-transform: rotate(0.5turn) scale(1.7);
+        -ms-transform: rotate(0.5turn) scale(1.7);
+            transform: rotate(0.5turn) scale(1.7); }
+    .header__logo--fill {
+      fill: #121232;
+      -webkit-transition: fill 0.5s ease-in;
+      -o-transition: fill 0.5s ease-in;
+      transition: fill 0.5s ease-in;
+      -webkit-transition: -webkit-transform 0.5s ease-in;
+      transition: -webkit-transform 0.5s ease-in;
+      -o-transition: transform 0.5s ease-in;
+      transition: transform 0.5s ease-in;
+      transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in; }
+      .header__logo--fill:hover {
+        fill: #e6c612; }
   .header__title {
     margin: 0;
     font-weight: 600;
@@ -448,5 +448,49 @@ html {
     font-size: 18px;
     line-height: 24px;
     text-align: center; }
+
+.icons {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: icons;
+  max-width: 24px;
+  max-height: 24px;
+  background-color: #F5E6E8;
+  border-radius: 4px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40px 40px 40px;
+      grid-template: 24px / 40px 40px 40px;
+      grid-template-areas: "bold italic list";
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  -o-transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  -webkit-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out; }
+  .icons__bold {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: bold; }
+    .icons__bold:hover {
+      -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+              transform: scale(1.1);
+      background-color: #d8cbcd; }
+  .icons__italic {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: italic; }
+    .icons__italic:hover {
+      -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+              transform: scale(1.1);
+      background-color: #d8cbcd; }
+  .icons__list {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: list; }
 
 /*# sourceMappingURL=main.css.map */
